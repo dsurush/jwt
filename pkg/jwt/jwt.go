@@ -109,7 +109,7 @@ func IsNotExpired(payload interface{}, moment time.Time) (ok bool, err error) {
 	panic(errors.New("no field with json:exp tag"))
 }
 
-func splitToken(token string) (parts []string, err error) {
+func SplitToken(token string) (parts []string, err error) {
 	parts = strings.Split(token, ".")
 	if len(parts) != 3 {
 		return nil, errors.New("bad token")
