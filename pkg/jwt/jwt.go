@@ -48,7 +48,7 @@ func Encode(payload interface{}, secret Secret) (token string, err error) {
 }
 
 func Decode(token string, payload interface{}) (err error) {
-	parts, err := splitToken(token)
+	parts, err := SplitToken(token)
 	if err != nil {
 		return err
 	}
@@ -67,7 +67,7 @@ func Decode(token string, payload interface{}) (err error) {
 }
 
 func Verify(token string, secret Secret) (ok bool, err error) {
-	parts, err := splitToken(token)
+	parts, err := SplitToken(token)
 	if err != nil {
 		return false, err
 	}
